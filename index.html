@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #eaf1e8; /* Fondo igual al de la imagen */
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .box1, .box2, .box3, .box31, .box4, .box5 {
+            position: absolute;
+            border-radius: 20px;
+            background-color: #b9dfb5; /* Color verde por defecto */
+        }
+
+/* BOX1 ------------------------------------------------------------------------------------------------------------------- BOX1 */
+        .box1 {
+            top: 10%;
+            left: 10%;
+            width: 33%;
+            height: 30%;
+            background-color: #A7D3A5; /* Color personalizado */
+            border: 2px solid #91B98D; /* Borde para hacerla más visible */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+            transition: filter 0.3s ease, transform 0.3s ease;
+        }
+        
+        /* TEXT DE LA CAIXA 1*/
+        .box1 h2{
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 4vw;
+            margin-top: 8%;
+            margin-left: 100px;
+            color: #ffffff; /* Color del título */
+        }
+        .box1 p{
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin-top: 4%;
+            margin-left: 13%;
+            font-size: 1.5vw;
+            color: #ffffff; /* Color del texto */
+        }
+        .box1:hover{
+            transform: scale(1.1);
+            filter: brightness(0.95);
+        }
+/* BOX2 ------------------------------------------------------------------------------------------------------------------- BOX2 */
+
+        .box2 {
+            top: 10%;
+            right: 10%;
+            width: 45%;
+            height: 45%;
+            background-color: #A3C6A2; /* Color personalizado */
+            border: 2px solid #91B98D; /* Borde para hacerla más visible */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+            transition: filter 0.3s ease, transform 0.3s ease;
+        }
+        .box2 *{
+            margin-left: 40%;
+            margin-right: 5%;
+        }
+        /* TEXT DE LA CAIXA 2*/
+        .box2 h2{
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 2vw;
+            margin-top: 8%;
+            margin-left: 8%;
+            color: #ffffff; /* Color del título */
+        }
+        .box2 h3  {
+            font-size: 20px;
+            color: #ffffff; /* Color del texto */
+            position: relative;
+            top: -100px;
+        }
+        .box2 p  {
+            font-size: 17px;
+            color: #ffffff; /* Color del texto */
+            position: relative;
+            top: -100px;
+        }
+        .box2 h3, .box2 p, .box2 li {
+            line-height: 2; /* Ajusta el espacio entre líneas (valor menor = menos espacio) */
+        }
+        .box2:hover{
+            transform: scale(1.1);
+            filter: brightness(0.95);
+        }
+/* BOX3 ------------------------------------------------------------------------------------------------------------------- BOX3 */
+
+        .box31{
+            bottom: 10%;
+            left: 10%;
+            width: 37%;
+            height: 45%;
+            background-color: #A3C6A2; /* Color personalizado */
+            border: 2px solid #91B98D; /* Borde para hacerla más visible */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+            transition: filter 0.3s ease, transform 0.3s ease;
+            display: grid;
+            grid-template-columns: 60% 40%;
+            grid-template-rows: 100%;
+            gap: 10px;
+        }
+        
+        /* TEXT DE LA CAIXA 3*/
+        .box31 h2 {
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 2vw;
+            margin-top: 80%;
+            margin-left: 18%;
+            color: #ffffff; /* Color del título */
+            grid-column: 2 / 3;
+            grid-row: 1;
+        }
+        .box31 div {
+            margin-top: 8%;
+            margin-left: 8%;
+            grid-column: 1 / 2;
+            grid-row: 1;
+            font-size: 1rem;
+            color: #ffffff;
+            line-height: 1.5; /* Mejora la legibilidad */
+        }
+        .box31 h3  {
+            font-size: 1rem;
+            color: #ffffff; /* Color del texto */
+        }
+        .box31 p  {
+            font-size: 15px;
+            color: #ffffff; /* Color del texto */
+        }
+        .box31 ul{
+            font-size: 15px;
+            color: #ffffff; /* Color del texto */
+        }
+        .box31 h2, .box31 h3, .box31 p, .box31 ul, .box31 li {
+            line-height: 1; /* Ajusta el espacio entre líneas (valor menor = menos espacio) */
+        }
+
+        .box31:hover{
+            transform: scale(1.1);
+            filter: brightness(0.95);
+        }
+/* BOX4 ------------------------------------------------------------------------------------------------------------------- BOX4 */
+
+        .box4 *{
+            margin-left: 10%;
+            margin-top: 4%
+        } 
+        /* TEXT DE LA CAIXA 4*/
+        .box4 {
+            display: grid; /* Activa el modelo grid */
+            grid-template-columns: 1fr 3fr; /* Define 2 columnas: 1 para imágenes, 1 para texto */
+            grid-template-rows: auto repeat(3, 1fr); /* Una fila para el título y 3 filas iguales para los ítems */
+            gap: 10px; /* Espaciado entre los elementos */
+            padding: 10px; /* Espaciado interno */
+            position: absolute; /* Posición absoluta */
+            bottom: 10%; /* Ajusta la posición vertical */
+            right: 30%; /* Ajusta la posición horizontal */
+            width: 19%; /* Ancho de la caja */
+            height: 30%; /* Altura fija del contenedor */
+            background-color: #A7D3A5; /* Color de fondo */
+            border-radius: 20px; /* Bordes redondeados */
+            border: 2px solid #91B98D; /* Borde visible */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+            overflow: hidden; /* Oculta cualquier contenido que exceda el contenedor */
+            transition: filter 0.3s ease, transform 0.3s ease;
+        }
+
+        .box4 h2 {
+            grid-column: 1 / -1; /* Ocupa ambas columnas */
+            grid-row: 1; /* Primera fila */
+            color: #ffffff; /* Texto en color blanco */
+            font-size: 2vw; /* Tamaño del título */
+            text-align: right; /* Centrado horizontalmente */
+            margin-right: 10%;
+        }
+
+        .ubi, .correu, .telefon {
+            display: flex; /* Alinea imagen y texto horizontalmente */
+            align-items: center; /* Centra verticalmente */
+            gap: 10px; /* Espaciado entre imagen y texto */
+            overflow: hidden; /* Asegura que no se desborde contenido */
+        }
+
+        .ubi {
+            grid-column: 1 / -1; /* Ocupa ambas columnas */
+            grid-row: 2; /* Segunda fila */
+        }
+
+        .correu {
+            grid-column: 1 / -1; /* Ocupa ambas columnas */
+            grid-row: 3; /* Tercera fila */
+        }
+
+        .telefon {
+            grid-column: 1 / -1; /* Ocupa ambas columnas */
+            grid-row: 4; /* Cuarta fila */
+        }
+
+        .ubi img, .correu img, .telefon img {
+            width: 24px; /* Tamaño fijo para las imágenes */
+            height: 24px; /* Tamaño fijo */
+        }
+
+        .ubi h3, .correu h3, .telefon h3 {
+            margin: 0; /* Elimina márgenes predeterminados */
+            font-size: 1rem; /* Tamaño del texto */
+            color: #ffffff; /* Color del texto */
+        }
+
+        .box4:hover {
+            transform: scale(1.1);
+            filter: brightness(0.95);
+        }
+
+/* BOX5 ------------------------------------------------------------------------------------------------------------------- BOX5 */
+
+        .box5 {
+
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            grid-template-rows: auto repeat(4, 1fr);
+            gap: 10px;
+            padding: 10px;
+            position: absolute;
+            place-items: center;
+            bottom: 10%;
+            right: 10%;
+            width: 19%;
+            height: 30%;
+            background-color: #a5cea3; /* Color personalizado */
+            border: 2px solid #91B98D; /* Borde para hacerla más visible */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+            overflow: hidden;
+            transition: filter 0.3s ease, transform 0.3s ease;
+
+        }
+        .box5 *{
+            margin-left: 20px;
+        }
+        /* TEXT DE LA CAIXA 5*/
+        .box5 h2 {
+            grid-column: 1 / -1;
+            grid-row: 1;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 2vw;
+            margin-top: 6%;
+            color: #ffffff; /* Color del título */
+        }
+        .spanish, .english, .catalan, .hebrew {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            overflow: hidden;
+        }
+        .spanish{
+            grid-column: 1 / -1;
+            grid-row: 2;
+        }
+        .english{
+            grid-column: 1 / -1;
+            grid-row: 3;
+        }
+        .catalan{
+            grid-column: 1 / -1;
+            grid-row: 4;
+        }
+        .hebrew{
+            grid-column: 1 / -1;
+            grid-row: 5;
+        }
+        .spanish img, .english img, .catalan img, .hebrew img {
+            width: 24px;
+            height: 24px;
+        }
+        .spanish h3, .english h3, .catalan h3, .hebrew h3 {
+            margin: 0; /* Elimina márgenes predeterminados */
+            font-size: 1rem; /* Tamaño del texto */
+            color: #ffffff; /* Color del texto */
+        }
+        .box5:hover {
+            transform: scale(1.1);
+            filter: brightness(0.95);
+        }
+/* CIRCLE ------------------------------------------------------------------------------------------------------------------- CRICLE */
+
+        .center-circle {
+            position: absolute;
+            width: 20%;
+            aspect-ratio: 1 / 1; /* Hace que sea un círculo perfecto */
+            border-radius: 50%;
+            background-color: #eaf1e8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            top: 50%;
+            border: 2px solid #91B98D; /* Borde visible */            
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .center-circle img {
+            width: 85%;
+            height: 85%;
+            object-fit: cover;
+            border-radius: 50%;
+            transition: filter 0.3s ease, transform 0.3s ease;
+        }
+
+        .center-circle img:hover {
+            transform: scale(1.1);
+            filter: brightness(0.95);
+        }    
+       
+
+
+        
+    
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1">
+            <h2>IAN KAPLAN</h2>
+            <p>SOFTWARE ENGENEERING STUDENT</p>
+        </div>
+        <div class="box2">
+            <h2>ACADEMIC <br> DATA</h2>
+            <h3>Computer Engineering Degree | In progress</h3>
+            <p>Universidad de Girona</p><br>
+            <h3>Science - Technology High School| 2020 - 2022</h3>
+            <p>Institut Giola (Llinars)</p><br>
+            <h3>Double degree in computer engineering and video game design
+                | 2022-2023</h3>
+            <p>Universidad Tecnocampus (Mataro)</p><br>
+            
+        </div>
+        <div class="box3">
+            
+        </div>
+        <div class="box31">
+            <h2>LABORAL EXPERIENCE</h2><br>
+            <div class="text">
+                <h3> YOUTH ACTIVITY MONITOR</h3><br>
+                <p>Comunitat jueva Atid de Catalunya | 2020 - Current</p><br>
+                    <ul>
+                        <li>Design and execution of activities for children between 5 and 16 years old</li>
+                        <li>Coordination of activities, Seminar management and Training of coordinators</li>
+                    </ul> <br>
+                <h3>WAREHOUSE AND PLANT CARE WORKER</h3><br>
+                <p>Outlet Nike BigBox, La Roca Village | 2022 - 2023</p><br>
+                    <ul>
+                        <li>Occupation of different disciplines in plant and warehouse</li><br>
+                    </ul>
+                <h3>COFFE BARISTA</h3><br>
+                <p>Starbucks, La Roca Village | 2023 - 2024</p><br>
+                    <ul>
+                        <li>Client assistance, product management and logistics</li>
+                    </ul>
+            </div>
+        </div>
+        <div class="box4">
+            <h2>CONTACT</h2>
+            <div class="ubi">
+                <img src="1f4cd.png" alt="Location Icon">
+                <h3>08440 Cardedeu, Barcelona</h3>
+            </div>
+            <div class="correu">
+                <img src="2168904.png" alt="Email Icon">
+                <h3>mriankaplan@gmail.com</h3>
+            </div>
+            <div class="telefon">
+                <img src="telefono.png" alt="Phone Icon">
+                <h3>+34 640959533</h3>
+            </div>
+        </div>
+        <div class="box5">
+            <h2> LANGUAGES</h2>
+            <div class="spanish">
+                <img src="bandera.png">
+                <h3>SPANISH</h3>
+            </div>
+            <div class="english">
+                <img src="bandera.png">
+                <h3>ENGLISH</h3>
+            </div>
+            <div class="catalan">
+                <img src="bandera.png">
+                <h3>CATALAN</h3>
+            </div>
+            <div class="hebrew">
+                <img src="bandera.png">
+                <h3>HEBREW</h3>
+            </div>
+        </div>
+        <div class="center-circle">
+            <img src="imagenCV.jpg" alt="Profile">
+        </div>
+    </div>
+</body>
+</html>
