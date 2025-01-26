@@ -4,3 +4,6 @@ This project took me a while to define the style and figure out what I wanted to
 The target audience for this résumé includes people who might hire me and appreciate originality and out-of-the-ordinary designs. I hope the résumé stands out to those individuals and that they value its uniqueness compared to a standard résumé.
 
 The layout features rounded rectangles distributed around the central photo. I aimed to place the most important information in the most visible positions to make the résumé visually appealing.
+
+Here the ling to the figma design: https://www.figma.com/design/cCLcGYu3rNjGzyD7kAdjXV/Untitled?node-id=0-1&t=P7vN8KbVfiSactLw-1
+
